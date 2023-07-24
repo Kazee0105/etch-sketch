@@ -1,18 +1,22 @@
-const gridBox = document.querySelector('.gridBox');
+function populateBoard(size) {
+    const board = document.querySelector('.board');
+    let squares = board.querySelectorAll('div');
+    squares.forEach(div=> div.remove());
+    board.style.gridTemplateColumns = `repeat(${size}, 1fr)`
+    board.style.gridTemplateRows = `repeat(${size}, 1fr)`
 
-makeGrid(5)
 
-function makeGrid(a){
-    const gridItem = document.createElement('div');   
-    for(i = 1; i <= a; i++){
-        gridItem.classList = 'rows';
-        gridBox.appendChild(gridItem.cloneNode(true));
-
-        for(j = 1; j <= a; j++){
-            
-        }
+    let amount = size * size;
+    for(i = 0 ; i < amount; i++){
+        let square = document.createElement('div');
+        square.style.backgroundColor = 'white';
+        square.classList = 'cubes';
+        board.insertAdjacentElement('beforeend',square);
     }
 }
 
-// gridBox.appendChild(gridItem);
-// gridItem.classList = 'rows'
+populateBoard(16);
+
+function changeSize(input){
+    populateBoard(input); 
+}

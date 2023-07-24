@@ -1,20 +1,14 @@
-.rows {
-    width: 2em;
-    height: 2em;
+.board {
     border: 1px solid black;
+    width: 500px;
+    height: 500px;
+    display: grid;
 }
 
-.gridBox {
-    display: flex;
-
+.cubes {
+    border: 1px dotted black;
 }
 
-.rangeSlide {
-    margin-bottom: 1em;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.cubes:hover {
+    background-color: red;
 }
